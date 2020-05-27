@@ -1,10 +1,10 @@
 import React from 'react';
-import { KeyGeneratorPage } from './components/pages/keyGenerator/KeyGeneratorPage';
+import { KeyGenerator } from './components/pages/keyGenerator/KeyGenerator';
 
 function App() {
   return (
     <div className="App">
-      <KeyGeneratorPage />
+      <KeyGenerator />
     </div>
   );
 }
