@@ -12,7 +12,7 @@ export const palette = {
   gradientPrimarySecond: 'rgb(31, 1, 31)',
   gradientSecondaryFirst: 'rgb(255, 214, 99)',
   gradientSecondarySecond: 'rgb(200, 156, 101)',
-  background: '#fff',
+  background: 'rgb(248, 248, 248)',
   backgroundDarker: 'rgb(234, 234, 234)',
   border: 'rgb(204, 204, 204)',
   error: 'rgb(244, 94, 89)',

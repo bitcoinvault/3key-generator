@@ -20,7 +20,9 @@ const styles = {
     padding: 8,
     backgroundColor: palette.backgroundDarker,
     borderRadius: 4,
-    marginEnd: 16,
     marginBottom: 16,
+    marginRight: 8,
+    marginLeft: 8,
+    display: 'inline-block'
   },
 }

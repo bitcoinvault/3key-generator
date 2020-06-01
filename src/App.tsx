@@ -1,10 +1,10 @@
 import React from 'react';
-import { KeyGenerator } from './components/pages/keyGenerator/KeyGenerator';
+import { KeyGeneratorPage } from './components/pages/keyGenerator/KeyGeneratorPage';
 
 function App() {
   return (
-    <div className="App">
-      <KeyGenerator />
+    <div className="App" style={{height: '100vh', minHeight: '100%'}}>
+      <KeyGeneratorPage />
     </div>
   );
 }

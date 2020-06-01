@@ -7,9 +7,10 @@ interface Props {
 
 export class FlatButton extends React.PureComponent<Props> {
   render() {
+    const { label } = this.props;
     return (
       <div style={styles.container}>
-        <span style={styles.label}>{this.props.label}</span>
+        <span style={styles.label}>{label}</span>
       </div>
     );
   }

@@ -1,16 +1,18 @@
 export const typography = {
   headline1: {
-    fontSize: 36,
+    fontSize: '2.25rem',
     letterSpacing: 0,
     fontWeight: 'bold' as const
   },
   headline2: {
-    fontSize: 28,
+    fontSize: '1.8rem',
     letterSpacing: 0,
+    fontWeight: 'bold' as const
   },
   headline3: {
-    fontSize: 24,
+    fontSize: '1.4rem',
     letterSpacing: 0,
+    fontWeight: 'bold' as const
   },
   headline4: {
     fontSize: 16,

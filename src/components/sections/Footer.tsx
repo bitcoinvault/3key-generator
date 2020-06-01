@@ -1,15 +1,14 @@
 import React from 'react';
-import { palette, typography, gradients } from '../../styles';
+import { palette, typography } from '../../styles';
 
 interface Props {
   label: string;
-  onClick?: any;
 }
 
-export class Button extends React.PureComponent<Props> {
+export class Footer extends React.PureComponent<Props> {
   render() {
     return (
-      <div style={styles.container} onClick={this.props.onClick}>
+      <div style={styles.container}>
         <span style={styles.label}>{this.props.label}</span>
       </div>
     );
@@ -18,15 +17,13 @@ export class Button extends React.PureComponent<Props> {
 
 const styles = {
   container: {
-    ...gradients.Secondary,
     width: 270,
     padding: '11px 25px 13px 25px',
     textAlign: 'center' as const,
-    borderRadius: 32.5,
-    cursor: 'pointer'
   },
   label: {
     ...typography.headline5,
-    color: palette.white,
+    color: palette.textSecondary,
+    cursor: 'pointer'
   },
 }

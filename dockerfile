@@ -22,6 +22,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 # install and cache dependencies
 # n/b: these dependencies are installed inside docker
 # it runs the command "yarn" which is an equivalent of "yarn add"
+RUN apk add --no-cache git
 RUN yarn
 # start the container
 CMD ["yarn", "start"]
