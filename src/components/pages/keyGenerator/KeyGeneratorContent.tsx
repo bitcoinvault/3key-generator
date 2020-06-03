@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chip } from '../../common/Chip';
 import { Button } from '../../common/Button';
-import { FlatButton } from '../../common/FlatButton';
+import { StyledText } from '../../common/StyledText';
 import { MultilineInput } from '../../common/MultilineInput';
 import { Grid } from '@material-ui/core';
 import { Label } from '../../common/Label';
@@ -87,7 +87,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
         </Grid>
         <div className="buttons-container">
           <Button onClick={this.onGenerateNewKey} label={en.content.generateNewKey} />
-          <PDFDownloadLink document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={en.content.pdfFileName}><FlatButton label={en.content.exportAsPdf} /></PDFDownloadLink>
+          <PDFDownloadLink className="flat-button" document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={en.content.pdfFileName}><StyledText label={en.content.exportAsPdf} /></PDFDownloadLink>
         </div>
       </div>
     );

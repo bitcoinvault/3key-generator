@@ -3,14 +3,6 @@ import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/render
 import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
 import { en } from '../../../locale/en';
 
-const breakTheWord = (word: string) => {
-  let words = null;
-  if (word.length > 90) {
-    words = word.match(/.{1,90}/g)
-  }
-  return words || [word];
-}
-
 const styles = StyleSheet.create({
   body: {
     paddingTop: 15,
@@ -54,16 +46,23 @@ const styles = StyleSheet.create({
   }
 });
 
+const breakWord = (word: string) => {
+  let words = null;
+  if (word.length > 90) {
+    words = word.match(/.{1,90}/g)
+  }
+  return words || [word];
+}
+
 export const KeyGeneratorPdf = (props: KeyGenerator) => {
   const { publicKey, publicKeyImgUrl, privateKeyImgUrl, words } = props;
-
   return (
     <Document>
       <Page size="A4" style={styles.body} wrap>
         <Text style={styles.title}>{en.pdf.title}</Text>
         <View>
           <Text style={styles.subtitle}>{en.pdf.publicKey}</Text>
-          <Text style={styles.text}>{breakTheWord(publicKey).map((word) => `${word}\n`)}</Text>
+          <Text style={styles.text}>{breakWord(publicKey).map((word) => `${word}\n`)}</Text>
           <Image style={styles.image} src={publicKeyImgUrl} />
         </View>
         <View>
@@ -74,5 +73,5 @@ export const KeyGeneratorPdf = (props: KeyGenerator) => {
           </View>
         </View>
       </Page>
-    </Document>)
+    </Document>);
 };

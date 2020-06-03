@@ -6,8 +6,6 @@ import { Footer } from '../../sections/Footer';
 import './keyGeneratorPage.scss';
 
 export const KeyGeneratorPage = () => {
-
-
   return (
     <div className="key-generator-page">
       <Header />
