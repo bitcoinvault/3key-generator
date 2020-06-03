@@ -17,8 +17,14 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react"
+    "jsx": "react",
+    "baseUrl": "./src",
   },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "jest.config.js"
+  ],
   "include": [
     "src"
   ]

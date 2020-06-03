@@ -1,5 +1,5 @@
 import React from 'react';
-import { palette } from '../../styles';
+import './multilineInput.scss';
 
 interface Props {
   value?: string;
@@ -8,17 +8,7 @@ interface Props {
 export class MultilineInput extends React.PureComponent<Props> {
   render() {
     return (
-      <textarea style={styles.textArea} readOnly rows={10} value={this.props.value} />
+      <textarea rows={8} readOnly value={this.props.value} />
     );
   }
-}
-
-const styles = {
-  textArea: {
-    resize: 'none' as const,
-    borderRadius: 20,
-    borderColor: palette.border,
-    padding: 16,
-    width: '90%'
-  },
 }

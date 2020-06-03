@@ -1,5 +1,5 @@
 import React from 'react';
-import { palette, typography, gradients } from '../../styles';
+import './button.scss';
 
 interface Props {
   label: string;
@@ -9,24 +9,9 @@ interface Props {
 export class Button extends React.PureComponent<Props> {
   render() {
     return (
-      <div style={styles.container} onClick={this.props.onClick}>
-        <span style={styles.label}>{this.props.label}</span>
+      <div className="button" onClick={this.props.onClick}>
+        <h4 className="label">{this.props.label}</h4>
       </div>
     );
   }
-}
-
-const styles = {
-  container: {
-    ...gradients.Secondary,
-    width: 270,
-    padding: '11px 25px 13px 25px',
-    textAlign: 'center' as const,
-    borderRadius: 32.5,
-    cursor: 'pointer'
-  },
-  label: {
-    ...typography.headline5,
-    color: palette.white,
-  },
 }

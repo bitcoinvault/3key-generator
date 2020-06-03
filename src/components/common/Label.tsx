@@ -1,5 +1,5 @@
 import React from 'react';
-import { palette, typography } from '../../styles';
+import './label.scss';
 
 interface Props {
   label: string;
@@ -8,17 +8,7 @@ interface Props {
 export class Label extends React.PureComponent<Props> {
   render() {
     return (
-      <div style={styles.label}>{this.props.label}</div>
+      <h4 className="label-item">{this.props.label}</h4>
     );
   }
-}
-
-const styles = {
-  label: {
-    ...typography.headline5,
-    color: palette.textGrey,
-    fontWeight: 300,
-    marginBottom: '1.2em',
-    marginTop: '1.4em'
-  },
 }

@@ -1,33 +1,15 @@
 import React from 'react';
-import { palette, typography, gradients } from '../../styles';
 import { images } from '../../assets';
+import { en } from '../../locale/en';
+import './header.scss';
 
 export class Header extends React.PureComponent {
   render() {
     return (
-      <div style={styles.container}>
-        <img alt="logo" src={images.logo} style={styles.logo} />
-        <span style={styles.label}>3 Keys Generator</span>
+      <div className="header">
+        <img alt={en.header.logoAlt} src={images.logo} className="logo" />
+        <h1 className="label">{en.header.title}</h1>
       </div>
     );
-  }
-}
-
-const styles = {
-  container: {
-    ...gradients.Primary,
-    padding: '1rem 0.5rem 1rem 0.5rem',
-    display: 'flex',
-    justifyContent: 'center' as const,
-    alignItems: 'center' as const,
-  },
-  label: {
-    ...typography.headline1,
-    color: palette.white,
-  },
-  logo: {
-    justifySelf: 'flex-start' as const,
-    width: 170,
-    height: 100,
   }
 }

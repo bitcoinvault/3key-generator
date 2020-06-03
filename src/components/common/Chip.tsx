@@ -1,5 +1,5 @@
 import React from 'react';
-import { palette, typography } from '../../styles';
+import './chip.scss';
 
 interface Props {
   label: string;
@@ -8,21 +8,7 @@ interface Props {
 export class Chip extends React.PureComponent<Props> {
   render() {
     return (
-      <span style={styles.label}>{this.props.label}</span>
+      <h4 className="chip">{this.props.label}</h4>
     );
   }
-}
-
-const styles = {
-  label: {
-    ...typography.headline5,
-    textAlign: 'center' as const,
-    padding: 8,
-    backgroundColor: palette.backgroundDarker,
-    borderRadius: 4,
-    marginBottom: 16,
-    marginRight: 8,
-    marginLeft: 8,
-    display: 'inline-block'
-  },
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { palette, typography } from '../../styles';
+import './flatButton.scss';
 
 interface Props {
   label: string;
@@ -9,22 +9,9 @@ export class FlatButton extends React.PureComponent<Props> {
   render() {
     const { label } = this.props;
     return (
-      <div style={styles.container}>
-        <span style={styles.label}>{label}</span>
+      <div className="flat-button">
+        <h4 className="label">{label}</h4>
       </div>
     );
   }
-}
-
-const styles = {
-  container: {
-    width: 270,
-    padding: '11px 25px 13px 25px',
-    textAlign: 'center' as const,
-  },
-  label: {
-    ...typography.headline5,
-    color: palette.textSecondary,
-    cursor: 'pointer'
-  },
 }

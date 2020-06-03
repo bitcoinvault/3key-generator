@@ -1,0 +1,9 @@
+@import '../../styles/colors';
+
+textarea {
+  resize: none;
+  border-radius: 20px;
+  border-color: $border;
+  padding: 16px;
+  width: 84%;
+}

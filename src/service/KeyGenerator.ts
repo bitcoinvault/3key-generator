@@ -37,7 +37,7 @@ export const generateNewKeys = (): GeneratedKey => {
   const random128bits = getBitsFromBytes(generatedBytes);
   const random132bits = create132BitKeyWithSha256(generatedBytes, random128bits);
   const generatedWords = generateWordsFromBytes(random132bits);
-  const privateKey = pbkdf2Sync(random128bits, random132bits.slice(0, 4), 1, 256, 'sha256');
+  const privateKey = pbkdf2Sync(random128bits, random132bits.slice(0, 4), 1, 32, 'sha256');
   const curve = ecurve.getCurveByName('secp256k1');
   const publicKey = curve.G.multiply(bigi.fromBuffer(privateKey)).getEncoded(false).toString('hex');
   return {
