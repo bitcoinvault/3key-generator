@@ -1,0 +1,70 @@
+@import '../../../styles/colors';
+
+.container {
+  text-align: center;
+
+  .buttons-container {
+    max-width: 320px;
+    width: auto;
+    margin: 0 auto;
+    margin-top: 2.5em;
+  }
+
+  .height-container {
+    height: 280px;
+  }
+
+  .chip-container {
+    word-wrap: break-word;
+    margin: 0 6%;
+  }
+
+  .private-container {
+    border-left: 1px solid;
+    border-color: $borderTransparent;
+  }
+
+  .flat-button {
+    width: auto;
+    padding: 20px 25px 20px 25px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1050px) {
+  .container {
+    .height-container {
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 959px) {
+  .container {
+    .private-container {
+      border-left: 0px;
+      margin-top: 2em;
+    }
+
+    .chip-container {
+      max-width: 100%;
+    }
+
+    .height-container {
+      height: auto;
+    }
+  }
+}
+
+
+@media (max-width: 575px) {
+  .container {
+    .private-container {
+      border-left: 0px;
+    }
+
+    .height-container {
+      height: auto;
+    }
+  }
+}

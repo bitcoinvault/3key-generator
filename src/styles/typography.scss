@@ -1,0 +1,33 @@
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 14px;
+  margin: 0;
+}
+
+h5 {
+  font-size: 12px;
+  margin: 0;
+  font-weight: lighter;
+}
+
+body {
+  @font-face {
+    font-family: "Ubuntu";
+    src: url("/fonts/Ubuntu-Regular.ttf")
+  }
+  font-family: Ubuntu;
+}
