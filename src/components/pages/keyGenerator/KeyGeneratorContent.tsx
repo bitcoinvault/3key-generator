@@ -78,7 +78,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
               <h3>{en.content.privateKey}</h3>
               <Label label={en.content.phrase} />
               <div className="chip-container">
-                {words?.map((word, index) => (<Chip label={`${index + 1}. ${word}`} />))}
+                {words?.map((word, index) => (<Chip key={index} label={`${index + 1}. ${word}`} />))}
               </div>
             </div>
             <Label label={en.content.privateKeyQrCode} />
@@ -87,7 +87,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
         </Grid>
         <div className="buttons-container">
           <Button onClick={this.onGenerateNewKey} label={en.content.generateNewKey} />
-          <PDFDownloadLink className="flat-button" document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={en.content.pdfFileName}><StyledText label={en.content.exportAsPdf} /></PDFDownloadLink>
+          <div className="flat-button"><PDFDownloadLink document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={en.content.pdfFileName}><StyledText label={en.content.exportAsPdf} /></PDFDownloadLink></div>
         </div>
       </div>
     );

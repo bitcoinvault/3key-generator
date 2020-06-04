@@ -1,13 +1,16 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
 import { en } from '../../../locale/en';
+
+Font.register({ family: 'Ubuntu', src: '/fonts/Ubuntu-Regular.ttf' });
 
 const styles = StyleSheet.create({
   body: {
     paddingTop: 15,
     paddingBottom: 15,
     paddingHorizontal: 10,
+    fontFamily: 'Ubuntu'
   },
   title: {
     fontSize: 24,
@@ -20,11 +23,9 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 12,
-    fontFamily: 'Times-Roman',
   },
   chip: {
     fontSize: 12,
-    fontFamily: 'Times-Roman',
     padding: 8,
     backgroundColor: 'rgb(234, 234, 234)',
     borderRadius: 4,
@@ -49,7 +50,7 @@ const styles = StyleSheet.create({
 const breakWord = (word: string) => {
   let words = null;
   if (word.length > 90) {
-    words = word.match(/.{1,90}/g)
+    words = word.match(/.{1,86}/g)
   }
   return words || [word];
 }
@@ -69,7 +70,7 @@ export const KeyGeneratorPdf = (props: KeyGenerator) => {
           <Text style={styles.subtitle}>{en.pdf.privateKey}</Text>
           <Image style={styles.image} src={privateKeyImgUrl} />
           <View style={styles.chipContainer}>
-            {words.map((word: string, index: number) => (<Text style={styles.chip}>{index + 1}. {word}</Text>))}
+            {words.map((word: string, index: number) => (<Text key={index} style={styles.chip}>{index + 1}. {word}</Text>))}
           </View>
         </View>
       </Page>
