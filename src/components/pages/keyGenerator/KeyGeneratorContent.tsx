@@ -47,8 +47,9 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
       words: keys.words
     });
     try {
-      const publicKeyImgUrl = await QRCode.toDataURL(keys.publicKey);
-      const privateKeyImgUrl = await QRCode.toDataURL(keys.privateKey);
+      const options = { margin: 5 };
+      const publicKeyImgUrl = await QRCode.toDataURL(keys.publicKey, options);
+      const privateKeyImgUrl = await QRCode.toDataURL(keys.privateKey, options);
       this.setState({
         privateKeyImgUrl,
         publicKeyImgUrl
@@ -63,15 +64,17 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
     return (
       <div className="container">
         <h2>{en.content.title}</h2>
-        <Grid container justify="center" style={{ marginTop: '3em' }}>
-          <Grid item xs={12} sm={10} md={6} lg={6}>
-            <div className="height-container">
+        <Grid container justify="center" style={{ marginTop: 40, marginBottom: 40 }}>
+          <Grid item xs={12} sm={10} md={6} lg={6} style={{display: 'flex', flexDirection: 'column'}}>
+            <div className="height-container" style={{height: '100%'}}>
               <h3>{en.content.publicKey}</h3>
               <Label label={en.content.multiline} />
               <MultilineInput value={publicKey} />
             </div>
-            <Label label={en.content.publicKeyQrCode} />
-            <img src={publicKeyImgUrl} alt={en.content.publicKey} width={200} />
+            <div className="qrcode-container">
+              <Label label={en.content.publicKeyQrCode} />
+              <img src={publicKeyImgUrl} alt={en.content.publicKey} width={200} />
+            </div>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={6} className="private-container">
             <div className="height-container">
@@ -81,8 +84,10 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
                 {words?.map((word, index) => (<Chip key={index} label={`${index + 1}. ${word}`} />))}
               </div>
             </div>
-            <Label label={en.content.privateKeyQrCode} />
-            <img src={privateKeyImgUrl} alt={en.content.privateKey} width={200} />
+            <div className="qrcode-container">
+              <Label label={en.content.privateKeyQrCode} />
+              <img src={privateKeyImgUrl} alt={en.content.privateKey} width={200} />
+            </div>
           </Grid>
         </Grid>
         <div className="buttons-container">
