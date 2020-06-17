@@ -22,5 +22,6 @@ export const en = {
     title: 'Generated ECDSA key',
     publicKey: 'Public key',
     privateKey: 'Private key',
+    nextSteps: 'Lorem ipsum about next steps for the User and what to do here',
   }
 }
