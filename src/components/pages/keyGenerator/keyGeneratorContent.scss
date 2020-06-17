@@ -7,11 +7,7 @@
     max-width: 320px;
     width: auto;
     margin: 0 auto;
-    margin-top: 2.5em;
-  }
-
-  .height-container {
-    height: 280px;
+    margin-top: 40px;
   }
 
   .chip-container {
@@ -31,14 +27,6 @@
   }
 }
 
-@media (max-width: 1050px) {
-  .container {
-    .height-container {
-      height: 300px;
-    }
-  }
-}
-
 @media (max-width: 959px) {
   .container {
     .private-container {
@@ -49,10 +37,6 @@
     .chip-container {
       max-width: 100%;
     }
-
-    .height-container {
-      height: auto;
-    }
   }
 }
 
@@ -61,10 +45,6 @@
   .container {
     .private-container {
       border-left: 0px;
-    }
-
-    .height-container {
-      height: auto;
     }
   }
 }

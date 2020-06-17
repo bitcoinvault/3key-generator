@@ -9,7 +9,7 @@ interface Props {
 export class Content extends React.PureComponent<Props> {
   render() {
     return (
-      <Grid container justify="center" style={{ marginTop: '3em' }}>
+      <Grid container justify="center" style={{ marginTop: 40 }}>
         <Grid item xs={12} sm={10} md={8} lg={6}>
           <div className="content">
             {this.props.children}
