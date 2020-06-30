@@ -7,7 +7,7 @@ import { Grid } from '@material-ui/core';
 import { Label } from '../../common/Label';
 import { generateNewKeys } from '../../../service/KeyGenerator';
 import { PDFDownloadLink } from '@react-pdf/renderer';
-import QRCode from 'qrcode';
+import QRCode, { QRCodeErrorCorrectionLevel } from 'qrcode';
 import { KeyGeneratorPdf } from './KeyGeneratorPdf';
 import { en } from '../../../locale/en';
 import './keyGeneratorContent.scss';
@@ -49,7 +49,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
     try {
       const options = { 
         margin: 5, 
-        errorCorrectionLevel: 'H' 
+        errorCorrectionLevel: "H" as QRCodeErrorCorrectionLevel
       };
       const publicKeyImgUrl = await QRCode.toDataURL(keys.publicKey, options);
       const privateKeyImgUrl = await QRCode.toDataURL(keys.privateKey, options);
