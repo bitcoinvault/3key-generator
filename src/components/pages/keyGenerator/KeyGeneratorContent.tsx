@@ -47,7 +47,10 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
       words: keys.words
     });
     try {
-      const options = { margin: 5 };
+      const options = { 
+        margin: 5, 
+        errorCorrectionLevel: 'H' 
+      };
       const publicKeyImgUrl = await QRCode.toDataURL(keys.publicKey, options);
       const privateKeyImgUrl = await QRCode.toDataURL(keys.privateKey, options);
       this.setState({
