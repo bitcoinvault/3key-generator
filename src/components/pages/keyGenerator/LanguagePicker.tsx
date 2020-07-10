@@ -59,7 +59,6 @@ export const LanguagePicker = () => {
 
   const isLanguage = languages.map(language => language.value === selectedLanguage).includes(true);
 
-  console.log(isLanguage, selectedLanguage);
   return (
     <Select className="language-picker" onChange={onChange} value={isLanguage ? selectedLanguage : 'en'}>
       {languages.map(language => <MenuItem key={language.value} value={language.value}>{language.label}</MenuItem>)}
