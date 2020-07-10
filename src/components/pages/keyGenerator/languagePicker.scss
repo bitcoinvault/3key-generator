@@ -1,0 +1,39 @@
+
+.language-picker {
+  background: none;
+  border: 0;
+  margin-top: 34px;
+  text-transform: uppercase;
+  background-color: #000;
+  padding: 0px 14px;
+  border-radius: 4px;
+
+  &.MuiInput-underline:before {
+    border-bottom: 0;
+  }
+  
+  .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
+    font-weight: bold;
+    color: #fff;
+    font-size: 15px;
+  }
+
+  svg {
+    right: 12px;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+  }
+}
+
+.MuiList-root.MuiMenu-list.MuiList-padding {
+  background-color: #000;
+  
+  li {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  li:hover {
+    background-color: #525252;
+  }
+}

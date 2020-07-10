@@ -1,7 +1,6 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
-import { en } from '../../../locale/en';
 import { pdf } from 'assets';
 
 Font.register({ family: 'Ubuntu', src: '/fonts/Ubuntu-Regular.ttf' });
@@ -91,35 +90,39 @@ const breakWord = (word: string) => {
   return words || [word];
 }
 
-export const KeyGeneratorPdf = (props: KeyGenerator) => {
-  const { publicKey, publicKeyImgUrl, privateKeyImgUrl, words } = props;
+interface Props extends KeyGenerator {
+  t: any;
+}
+
+export const KeyGeneratorPdf = (props: Props) => {
+  const { publicKey, publicKeyImgUrl, privateKeyImgUrl, words, t } = props;
   return (
     <Document>
       <Page size="A4" wrap>
         <Image src={pdf.header} />
         <View style={styles.body}>
           <View style={styles.titleContainer}>
-            <Text style={styles.title}>{en.pdf.title}</Text>
-            <Text style={styles.caption}>{en.pdf.nextSteps}</Text>
+            <Text style={styles.title}>{t('pdf:title')}</Text>
+            <Text style={styles.caption}>{t('pdf:nextSteps')}</Text>
           </View>
           <View style={styles.row}>
             <View style={styles.column}>
-              <Text style={styles.subtitle}>{en.pdf.publicKey}</Text>
-              <Text style={styles.caption}>{en.content.multiline}</Text>
+              <Text style={styles.subtitle}>{t('pdf:publicKey')}</Text>
+              <Text style={styles.caption}>{t('content:multiline')}</Text>
               <Text style={styles.text}>{breakWord(publicKey).map((word) => `${word}\n`)}</Text>
               <View style={styles.imageContainer}>
-                <Text style={styles.caption}>{en.content.publicKeyQrCode}</Text>
+                <Text style={styles.caption}>{t('content:publicKeyQrCode')}</Text>
                 <Image style={styles.image} src={publicKeyImgUrl} />
               </View>
             </View>
             <View style={styles.column}>
-              <Text style={styles.subtitle}>{en.pdf.privateKey}</Text>
-              <Text style={styles.caption}>{en.content.phrase}</Text>
+              <Text style={styles.subtitle}>{t('pdf:privateKey')}</Text>
+              <Text style={styles.caption}>{t('content:phrase')}</Text>
               <View style={styles.chipContainer}>
                 {words.map((word: string, index: number) => (<Text key={index} style={styles.chip}>{index + 1}. {word}</Text>))}
               </View>
               <View style={styles.imageContainer}>
-                <Text style={styles.caption}>{en.content.privateKeyQrCode}</Text>
+                <Text style={styles.caption}>{t('content:privateKeyQrCode')}</Text>
                 <Image style={styles.image} src={privateKeyImgUrl} />
               </View>
             </View>
