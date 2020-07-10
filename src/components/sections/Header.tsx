@@ -1,15 +1,18 @@
 import React from 'react';
 import { images } from '../../assets';
-import { en } from '../../locale/en';
+import { withTranslation, WithTranslation } from 'react-i18next';
 import './header.scss';
 
-export class Header extends React.PureComponent {
+class Header extends React.PureComponent<WithTranslation, any> {
   render() {
+    const { t } = this.props;
     return (
       <div className="header">
-        <img alt={en.header.logoAlt} src={images.logo} className="logo" />
-        <h1 className="label">{en.header.title}</h1>
+        <img alt={t('header:logoAlt')} src={images.logo} className="logo" />
+        <h1 className="label">{t('header:title')}</h1>
       </div>
     );
   }
 }
+
+export default withTranslation()(Header);

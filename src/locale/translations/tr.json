@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "3 Anahtar Oluşturucu",
+    "logoAlt": "bitcoin vault logosu"
+  },
+  "content": {
+    "title": "ECDSA anahttarı oluştur",
+    "publicKey": "Genel anahtar",
+    "multiline": "Çok satırlı",
+    "publicKeyQrCode": "Genel anahtar QR kodu",
+    "privateKey": "Özel anahtar",
+    "phrase": "İfade",
+    "privateKeyQrCode": "Özel anahtar QR kodu",
+    "generateNewKey": "Yeni anahtar oluştur",
+    "exportAsPdf": "PDF olarak dışa aktar",
+    "pdfFileName": "generated_ecdsa_keys.pdf"
+  },
+  "footer": {
+    "title": "© Bitcoin Vault Tüm hakları saklıdır."
+  },
+  "pdf": {
+    "title": "ECDSA anahtarı oluşturuldu",
+    "publicKey": "Genel anahtar",
+    "privateKey": "Özel anahtar",
+    "nextSteps": "Anahtar başarıyla oluşturuldu. Güvenli bir yerde muhafaza edin ve kimseyle paylaşmayın. Anahtar, cüzdanınızı kurarken sonraki adımlarda gerekli olacak(masa üstünde veya mobil uygulamada)."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "Generador de 3 claves",
+    "logoAlt": "Logo de Bitcoin Vault"
+  },
+  "content": {
+    "title": "Generar clave ECDSA",
+    "publicKey": "Clave pública",
+    "multiline": "Multilínea",
+    "publicKeyQrCode": "Código QR de clave pública",
+    "privateKey": "Clave privada",
+    "phrase": "Frase",
+    "privateKeyQrCode": "Código QR de clave privada",
+    "generateNewKey": "Generar nueva clave",
+    "exportAsPdf": "Exportar como PDF",
+    "pdfFileName": "claves_ecdsa_generadas.pdf"
+  },
+  "footer": {
+    "title": "© Bitcoin Vault Todos los derechos reservados."
+  },
+  "pdf": {
+    "title": "Clave ECDSA generada",
+    "publicKey": "Clave pública",
+    "privateKey": "Clave privada",
+    "nextSteps": "La clave se generó exitosamente. Guárdela en un lugar seguro y no la comparta con nadie. Esta se necesitará en etapas posteriores de la configuración de su monedero (en el escritorio o en una app para dispositivos móviles)."
+  }
+}

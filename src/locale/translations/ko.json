@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "세 가지 키 (Key) 생성기",
+    "logoAlt": "비트코인 볼트 로고"
+  },
+  "content": {
+    "title": "ECDSA 키 생성하기",
+    "publicKey": "공개 키",
+    "multiline": "멀티라인",
+    "publicKeyQrCode": "공개 키 QR 코드",
+    "privateKey": "개인 키",
+    "phrase": "암호",
+    "privateKeyQrCode": "개인 키 QR 코드",
+    "generateNewKey": "새로운 키 생성하기",
+    "exportAsPdf": "PDF 형식으로 내보내기",
+    "pdfFileName": "ecdsa_키_생성.pdf"
+  },
+  "footer": {
+    "title": "© Bitcoin Vault All rights reserved."
+  },
+  "pdf": {
+    "title": "생성된 ECDSA 키",
+    "publicKey": "공개 키",
+    "privateKey": "개인 키",
+    "nextSteps": "개인 키가 성공적으로 생성되었습니다. 안전한 장소에 보관해야하며 타인에게 공유되어서는 안됩니다. 지갑 설정의 마지막 단계에 개인 키가 반드시 필요합니다. (데스크탑 또는 모바일 어플리케이션)"
+  }
+}
