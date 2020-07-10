@@ -2,7 +2,7 @@ import React from 'react';
 import './languagePicker.scss';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
-import i18n from '../../../locale/i18n';
+import i18n, { getUsedLanguage } from '../../../locale/i18n';
 
 interface Language {
   label: string;
@@ -55,7 +55,7 @@ export const LanguagePicker = () => {
     localStorage.setItem('language', language);
   }
 
-  const selectedLanguage = localStorage.getItem('language') || 'en';
+  const selectedLanguage = getUsedLanguage();
 
   return (
     <Select className="language-picker" onChange={onChange} value={selectedLanguage}>
