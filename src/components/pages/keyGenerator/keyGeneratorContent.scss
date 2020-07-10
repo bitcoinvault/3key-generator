@@ -18,6 +18,12 @@
   .private-container {
     border-left: 1px solid;
     border-color: $borderTransparent;
+    display: flex;
+    flex-direction: column;
+
+    .height-container {
+      flex-grow: 1;
+    }
   }
 
   .flat-button {
