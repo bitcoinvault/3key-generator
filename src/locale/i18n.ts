@@ -10,10 +10,13 @@ import vi from './translations/vi.json';
 import zh from './translations/zh.json';
 import detector from "i18next-browser-languagedetector";
 
-const navigatorLanguage = navigator.languages
-? navigator.languages[0]
-: (navigator.language);
-const lng = localStorage.getItem('language') || navigatorLanguage || 'en';
+export const getUsedLanguage = () => {
+  const navigatorLanguage = navigator.languages
+    ? navigator.languages[0]
+    : (navigator.language);
+  const lng = localStorage.getItem('language') || navigatorLanguage || 'en';
+  return lng;
+}
 
 i18next
   .use(detector)
@@ -30,7 +33,7 @@ i18next
       vi,
       zh
     },
-    lng,
+    lng: getUsedLanguage(),
     debug: false,
     interpolation: {
       escapeValue: false,
