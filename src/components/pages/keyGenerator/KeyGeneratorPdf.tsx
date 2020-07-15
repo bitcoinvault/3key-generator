@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   titleContainer: {
-    marginBottom: 60
+    marginBottom: 40
   },
   subtitle: {
     fontSize: 18,
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   },
   imageContainer: {
-    marginTop: 55
+    marginTop: 35
   },
   chipContainer: {
     flexDirection: 'row',
