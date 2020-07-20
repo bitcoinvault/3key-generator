@@ -13,7 +13,7 @@
     "privateKeyQrCode": "Kode QR kunci pribadi",
     "generateNewKey": "Hasilkan kunci baru",
     "exportAsPdf": "Export sebagai PDF",
-    "pdfFileName": "\r\nhasil_kunci_ecdsa.pdf"
+    "pdfFileName": "hasil_kunci_ecdsa.pdf"
   },
   "footer": {
     "title": "© Bitcoin Vault Semua hak dilindungi."

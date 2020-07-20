@@ -11,6 +11,10 @@
   &.MuiInput-underline:before {
     border-bottom: 0;
   }
+
+  &.MuiInput-underline:after {
+    border-bottom: 0;
+  }
   
   .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input {
     font-weight: bold;
