@@ -4,10 +4,10 @@
     "logoAlt": "logo của bitcoin vault "
   },
   "content": {
-    "title": "Tạo khóa ECDSA\r\n",
+    "title": "Tạo khóa ECDSA",
     "publicKey": "Khóa công khai ",
     "multiline": "Đa dòng ",
-    "publicKeyQrCode": "\r\nMã QR của khóa công khai",
+    "publicKeyQrCode": "Mã QR của khóa công khai",
     "privateKey": "Khóa riêng tư",
     "phrase": "Cụm từ ",
     "privateKeyQrCode": "Mã QR của khóa riêng tư",
@@ -19,7 +19,7 @@
     "title": "© Bitcoin Vault Tất cả các quyền."
   },
   "pdf": {
-    "title": "Đã tạo khóa ECDSA\r\n",
+    "title": "Đã tạo khóa ECDSA",
     "publicKey": "Khóa công khai ",
     "privateKey": "Khóa riêng tư",
     "nextSteps": "Khóa riêng tư đã được tạo thành công. Giữ nó ở một nơi an toàn và không chia sẻ nó với bất cứ ai. Khóa sẽ cần thiết trong các giai đoạn sau của việc thiết lập ví của quý khách (trên desktop hoặc trên ứng dụng di động)."

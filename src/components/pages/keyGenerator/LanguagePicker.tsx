@@ -53,6 +53,7 @@ export const LanguagePicker = () => {
     const language = event.target.value;
     i18n.changeLanguage(language);
     localStorage.setItem('language', language);
+    window.location.reload();
   }
 
   const selectedLanguage = getUsedLanguage();
