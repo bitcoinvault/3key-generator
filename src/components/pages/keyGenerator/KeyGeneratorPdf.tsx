@@ -2,32 +2,32 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
 import { pdf } from 'assets';
+import { getLightFontSrc, getBoldFontSrc, getRegularFontSrc } from './keyGeneratorPdf/fontService';
 
-Font.register({ family: 'Ubuntu', src: '/fonts/Ubuntu-Regular.ttf' });
-Font.register({ family: 'Ubuntu-Bold', src: '/fonts/Ubuntu-Bold.ttf' });
-Font.register({ family: 'Ubuntu-Light', src: '/fonts/Ubuntu-Light.ttf' });
+Font.register({ family: 'Font', src: getRegularFontSrc() });
+Font.register({ family: 'Font-Bold', src: getBoldFontSrc() });
+Font.register({ family: 'Font-Light', src: getLightFontSrc() });
 
 const styles = StyleSheet.create({
   body: {
-    paddingTop: 55,
-    paddingBottom: 15,
+    paddingTop: 34,
     paddingHorizontal: 32,
-    fontFamily: 'Ubuntu'
+    fontFamily: 'Font'
   },
   title: {
     fontSize: 26,
     textAlign: 'center',
-    fontFamily: 'Ubuntu-Bold',
+    fontFamily: 'Font-Bold',
     marginBottom: 16,
   },
   titleContainer: {
-    marginBottom: 40
+    marginBottom: 30
   },
   subtitle: {
     fontSize: 18,
-    fontFamily: 'Ubuntu-Bold',
+    fontFamily: 'Font-Bold',
     alignSelf: 'center',
-    marginBottom: 32,
+    marginBottom: 28,
   },
   text: {
     fontSize: 12,
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
   },
   caption: {
-    fontFamily: 'Ubuntu-Light',
+    fontFamily: 'Font-Light',
     fontSize: 14,
     textAlign: 'center',
     marginBottom: 16,
@@ -62,13 +62,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   },
   imageContainer: {
-    marginTop: 35
+    marginTop: 24
   },
   chipContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    fontFamily: 'Ubuntu-Bold'
+    fontFamily: 'Font-Bold'
   },
   row: {
     flex: 1,
