@@ -18,36 +18,39 @@ const MicrosoftYaHeiLanguages = ['zh'];
 
 export const getBoldFontSrc = () => {
   if (UbuntuLanguages.includes(currentLanguage)) {
-  return UbuntuBold;
+    return UbuntuBold;
   } else if (NasuLanguages.includes(currentLanguage)) {
     return NasuBold;
   } else if (NanumLanguages.includes(currentLanguage)) {
-     return NanumGothicBold;
+    return NanumGothicBold;
   } else if (MicrosoftYaHeiLanguages.includes(currentLanguage)) {
     return MicrosoftYaHei;
- }
+  }
+  return UbuntuBold;
 }
 
 export const getLightFontSrc = () => {
   if (UbuntuLanguages.includes(currentLanguage)) {
     return UbuntuLight;
-    } else if (NasuLanguages.includes(currentLanguage)) {
-      return NasuRegular;
-    } else if (NanumLanguages.includes(currentLanguage)) {
-      return NanumGothicLight;
-   } else if (MicrosoftYaHeiLanguages.includes(currentLanguage)) {
+  } else if (NasuLanguages.includes(currentLanguage)) {
+    return NasuRegular;
+  } else if (NanumLanguages.includes(currentLanguage)) {
+    return NanumGothicLight;
+  } else if (MicrosoftYaHeiLanguages.includes(currentLanguage)) {
     return MicrosoftYaHei;
- }
+  }
+  return UbuntuLight;
 }
 
 export const getRegularFontSrc = () => {
   if (UbuntuLanguages.includes(currentLanguage)) {
     return UbuntuRegular;
-    } else if (NasuLanguages.includes(currentLanguage)) {
-      return NasuRegular;
-    } else if (NanumLanguages.includes(currentLanguage)) {
-      return NanumGothicRegular;
-   } else if (MicrosoftYaHeiLanguages.includes(currentLanguage)) {
+  } else if (NasuLanguages.includes(currentLanguage)) {
+    return NasuRegular;
+  } else if (NanumLanguages.includes(currentLanguage)) {
+    return NanumGothicRegular;
+  } else if (MicrosoftYaHeiLanguages.includes(currentLanguage)) {
     return MicrosoftYaHei;
- }
+  }
+  return UbuntuRegular;
 }
