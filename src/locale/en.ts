@@ -1,6 +1,6 @@
 export const en = {
   header: {
-    title: '3 Keys Generator',
+    title: 'Key Generator',
     logoAlt: 'bitcoin vault logo'
   },
   content: {
