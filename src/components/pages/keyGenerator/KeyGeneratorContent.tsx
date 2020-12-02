@@ -95,8 +95,10 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
           </Grid>
         </Grid>
         <div className="buttons-container">
-          <Button onClick={this.onGenerateNewKey} label={t('content:generateNewKey')} />
-          <div className="flat-button"><PDFDownloadLink document={<KeyGeneratorPdf t={t} publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={t('content:pdfFileName')}><StyledText label={t('content:exportAsPdf')} /></PDFDownloadLink></div>
+          <PDFDownloadLink document={<KeyGeneratorPdf t={t} publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={t('content:pdfFileName')}>
+            <Button label={t('content:exportAsPdf')} />
+          </PDFDownloadLink>
+          <div onClick={this.onGenerateNewKey} className="flat-button"><StyledText label={t('content:generateNewKey')} /></div>
         </div>
       </div>
     );
