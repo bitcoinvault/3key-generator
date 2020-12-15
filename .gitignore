@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# screenshots & videos
+tests/e2e/videos
+tests/e2e/screenshots

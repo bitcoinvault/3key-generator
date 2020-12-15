@@ -23,7 +23,10 @@
     "bip39": "^3.0.2",
     "bitcoinjs-lib": "git+https://github.com/bitcoinvault/bitcoinjs-lib.git",
     "clsx": "^1.1.0",
+    "cy-view": "^1.0.9",
+    "cypress": "^6.1.0",
     "ecurve": "^1.0.6",
+    "husky": "^4.3.6",
     "node-sass": "^4.14.1",
     "pbkdf2": "^3.0.17",
     "qrcode": "^1.4.4",
@@ -37,6 +40,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "test:cy": "cypress run",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -54,5 +58,10 @@
       "not dead",
       "not op_mini all"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run test:cy"
+    }
   }
 }
