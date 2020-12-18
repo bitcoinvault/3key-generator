@@ -1,3 +1,7 @@
 {
-  "baseUrl": "https://keygenerator.bitcoinvault.global/"
+  "baseUrl": "https://keygenerator.bitcoinvault.global/",
+  "env": {
+    "video": "false",
+    "screenshotOnRunFailure": "false"
+  }
 }
