@@ -61,7 +61,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run test:cy"
+      "pre-push": "npm run test:cy"
     }
   }
 }
