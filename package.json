@@ -23,7 +23,6 @@
     "bip39": "^3.0.2",
     "bitcoinjs-lib": "git+https://github.com/bitcoinvault/bitcoinjs-lib.git",
     "clsx": "^1.1.0",
-    "cy-view": "^1.0.9",
     "cypress": "^6.1.0",
     "ecurve": "^1.0.6",
     "husky": "^4.3.6",
@@ -61,7 +60,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run test:cy"
+      "pre-push": "yarn run test:cy -- --env configFile=local"
     }
   }
 }
