@@ -3,7 +3,7 @@ const keyGenerator = {
   logo: '.logo',
   title: 'h2',
   languageButton:
-    '.language-picker .MuiSelect-root.MuiSelect-select.MuiSelect-selectMenu.MuiInputBase-input.MuiInput-input',
+  '.language-picker',
   phrase: '.chip-container > :nth-child(1n+0)',
   multiline: 'textarea',
   qrPublicKey: '[alt="Public key"]',
