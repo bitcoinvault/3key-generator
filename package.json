@@ -36,13 +36,16 @@
     "react-dom": "^16.13.1",
     "react-i18next": "^11.7.0",
     "react-scripts": "3.4.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "cypress": "^6.1.0",
+    "husky": "^4.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:cy": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -58,5 +61,10 @@
       "not dead",
       "not op_mini all"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn run test:cy -- --env configFile=local"
+    }
   }
 }
