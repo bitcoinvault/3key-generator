@@ -11,6 +11,7 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/bigi": "^1.4.2",
     "@types/ecurve": "^1.0.0",
+    "@types/i18next": "^13.0.0",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
     "@types/pbkdf2": "^3.0.0",
@@ -23,9 +24,9 @@
     "bip39": "^3.0.2",
     "bitcoinjs-lib": "git+https://github.com/bitcoinvault/bitcoinjs-lib.git",
     "clsx": "^1.1.0",
-    "cypress": "^6.1.0",
     "ecurve": "^1.0.6",
-    "husky": "^4.3.6",
+    "i18next": "^19.5.4",
+    "i18next-browser-languagedetector": "^5.0.0",
     "node-sass": "^4.14.1",
     "pbkdf2": "^3.0.17",
     "qrcode": "^1.4.4",
@@ -33,15 +34,18 @@
     "react": "^16.13.1",
     "react-app-polyfill": "^1.0.6",
     "react-dom": "^16.13.1",
+    "react-i18next": "^11.7.0",
     "react-scripts": "3.4.0",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "cypress": "^6.1.0",
+    "husky": "^4.3.6"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test:cy": "cypress run",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:cy": "cypress run"
   },
   "eslintConfig": {
     "extends": "react-app"
