@@ -1,0 +1,7 @@
+{
+  "baseUrl": "https://keygenerator.cloudbestenv.com/",
+  "env": {
+    "video": "false",
+    "screenshotOnRunFailure": "false"
+  }
+}
