@@ -26,10 +26,7 @@ export interface KeyGenerator extends GeneratedKey {
   privateKeyImgUrl: string;
 }
 
-class KeyGeneratorContent extends React.PureComponent<
-  WithTranslation,
-  KeyGenerator
-> {
+class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenerator> {
   constructor(props: WithTranslation) {
     super(props);
     this.state = {
@@ -69,30 +66,13 @@ class KeyGeneratorContent extends React.PureComponent<
   };
 
   render() {
-    const {
-      privateKey,
-      publicKey,
-      words,
-      privateKeyImgUrl,
-      publicKeyImgUrl,
-    } = this.state;
+    const { privateKey, publicKey, words, privateKeyImgUrl, publicKeyImgUrl } = this.state;
     const { t } = this.props;
     return (
       <div className="container">
         <h2>{t('content:title')}</h2>
-        <Grid
-          container
-          justify="center"
-          style={{ marginTop: 40, marginBottom: 40 }}
-        >
-          <Grid
-            item
-            xs={12}
-            sm={10}
-            md={6}
-            lg={6}
-            style={{ display: 'flex', flexDirection: 'column' }}
-          >
+        <Grid container justify="center" style={{ marginTop: 40, marginBottom: 40 }}>
+          <Grid item xs={12} sm={10} md={6} lg={6} style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="height-container" style={{ height: '100%' }}>
               <h3>{t('content:publicKey')}</h3>
               <Label label={t('content:multiline')} />
@@ -100,21 +80,10 @@ class KeyGeneratorContent extends React.PureComponent<
             </div>
             <div className="qrcode-container">
               <Label label={t('content:publicKeyQrCode')} />
-              <img
-                src={publicKeyImgUrl}
-                alt={t('content:publicKey')}
-                width={200}
-              />
+              <img src={publicKeyImgUrl} alt={t('content:publicKey')} width={200} />
             </div>
           </Grid>
-          <Grid
-            item
-            xs={12}
-            sm={10}
-            md={6}
-            lg={6}
-            className="private-container"
-          >
+          <Grid item xs={12} sm={10} md={6} lg={6} className="private-container">
             <div className="height-container">
               <h3>{t('content:privateKey')}</h3>
               <Label label={t('content:phrase')} />
@@ -126,11 +95,7 @@ class KeyGeneratorContent extends React.PureComponent<
             </div>
             <div className="qrcode-container">
               <Label label={t('content:privateKeyQrCode')} />
-              <img
-                src={privateKeyImgUrl}
-                alt={t('content:privateKey')}
-                width={200}
-              />
+              <img src={privateKeyImgUrl} alt={t('content:privateKey')} width={200} />
             </div>
           </Grid>
         </Grid>

@@ -1,3 +1,6 @@
+/* eslint-disable jest/valid-expect */
+/* eslint-disable jest/valid-expect-in-promise */
+/* eslint-disable jest/expect-expect */
 import keyGenerator from '../../support/pages/keyGenerator';
 import devices from '../../support/devices';
 

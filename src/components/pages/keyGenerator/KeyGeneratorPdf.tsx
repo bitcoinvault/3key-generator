@@ -1,23 +1,11 @@
 import React from 'react';
-import {
-  Document,
-  Page,
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  Font,
-} from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
 
 import { pdf } from 'assets';
 
 import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
 
-import {
-  getLightFontSrc,
-  getBoldFontSrc,
-  getRegularFontSrc,
-} from './keyGeneratorPdf/fontService';
+import { getLightFontSrc, getBoldFontSrc, getRegularFontSrc } from './keyGeneratorPdf/fontService';
 
 Font.register({ family: 'Font', src: getRegularFontSrc() });
 Font.register({ family: 'Font-Bold', src: getBoldFontSrc() });
@@ -124,13 +112,9 @@ export const KeyGeneratorPdf = (props: Props) => {
             <View style={styles.column}>
               <Text style={styles.subtitle}>{t('pdf:publicKey')}</Text>
               <Text style={styles.caption}>{t('content:multiline')}</Text>
-              <Text style={styles.text}>
-                {breakWord(publicKey).map((word) => `${word}\n`)}
-              </Text>
+              <Text style={styles.text}>{breakWord(publicKey).map((word) => `${word}\n`)}</Text>
               <View style={styles.imageContainer}>
-                <Text style={styles.caption}>
-                  {t('content:publicKeyQrCode')}
-                </Text>
+                <Text style={styles.caption}>{t('content:publicKeyQrCode')}</Text>
                 <Image style={styles.image} src={publicKeyImgUrl} />
               </View>
             </View>
@@ -145,9 +129,7 @@ export const KeyGeneratorPdf = (props: Props) => {
                 ))}
               </View>
               <View style={styles.imageContainer}>
-                <Text style={styles.caption}>
-                  {t('content:privateKeyQrCode')}
-                </Text>
+                <Text style={styles.caption}>{t('content:privateKeyQrCode')}</Text>
                 <Image style={styles.image} src={privateKeyImgUrl} />
               </View>
             </View>

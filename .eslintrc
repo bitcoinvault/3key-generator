@@ -1,12 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["react-hooks", "import"],
+  "plugins": ["react-hooks", "import", "cypress"],
   "extends": [
     "plugin:jest/recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended"
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2018,
@@ -48,6 +49,7 @@
   },
   "env": {
     "jest/globals": true,
+    "cypress/globals": true,
     "browser": true
   },
   "settings": {

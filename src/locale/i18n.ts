@@ -12,9 +12,7 @@ import vi from './translations/vi.json';
 import zh from './translations/zh.json';
 
 export const getUsedLanguage = () => {
-  const navigatorLanguage = navigator.languages
-    ? navigator.languages[0]
-    : navigator.language;
+  const navigatorLanguage = navigator.languages ? navigator.languages[0] : navigator.language;
   const lng = localStorage.getItem('language') || navigatorLanguage || 'en';
   return lng;
 };
