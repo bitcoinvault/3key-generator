@@ -1,4 +1,5 @@
 import i18n from '../../../../locale/i18n';
+
 import UbuntuBold from './fonts/Ubuntu-Bold.ttf';
 import UbuntuRegular from './fonts/Ubuntu-Regular.ttf';
 import UbuntuLight from './fonts/Ubuntu-Light.ttf';
@@ -9,7 +10,7 @@ import NanumGothicRegular from './fonts/NanumGothic-Regular.ttf';
 import NanumGothicBold from './fonts/NanumGothic-Bold.ttf';
 import NanumGothicLight from './fonts/NanumGothic-Light.ttf';
 
-let currentLanguage = i18n.language || window.localStorage.i18nextLng || 'en';
+const currentLanguage = i18n.language || window.localStorage.i18nextLng || 'en';
 
 const UbuntuLanguages = ['en', 'es', 'hi', 'pt'];
 const NasuLanguages = ['vi', 'tr', 'ja'];
@@ -27,7 +28,7 @@ export const getBoldFontSrc = () => {
     return MicrosoftYaHei;
   }
   return UbuntuBold;
-}
+};
 
 export const getLightFontSrc = () => {
   if (UbuntuLanguages.includes(currentLanguage)) {
@@ -40,7 +41,7 @@ export const getLightFontSrc = () => {
     return MicrosoftYaHei;
   }
   return UbuntuLight;
-}
+};
 
 export const getRegularFontSrc = () => {
   if (UbuntuLanguages.includes(currentLanguage)) {
@@ -53,4 +54,4 @@ export const getRegularFontSrc = () => {
     return MicrosoftYaHei;
   }
   return UbuntuRegular;
-}
+};

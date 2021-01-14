@@ -7,8 +7,6 @@ interface Props {
 
 export class Chip extends React.PureComponent<Props> {
   render() {
-    return (
-      <h4 className="chip">{this.props.label}</h4>
-    );
+    return <h4 className="chip">{this.props.label}</h4>;
   }
 }

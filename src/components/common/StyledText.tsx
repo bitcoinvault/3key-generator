@@ -8,8 +8,6 @@ interface Props {
 export class StyledText extends React.PureComponent<Props> {
   render() {
     const { label } = this.props;
-    return (
-      <h4 className="styled-text">{label}</h4>
-    );
+    return <h4 className="styled-text">{label}</h4>;
   }
 }

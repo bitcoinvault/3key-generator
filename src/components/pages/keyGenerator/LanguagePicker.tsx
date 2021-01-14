@@ -2,6 +2,7 @@ import React from 'react';
 import './languagePicker.scss';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+
 import i18n, { getUsedLanguage } from '../../../locale/i18n';
 
 interface Language {
@@ -13,39 +14,39 @@ export const LanguagePicker = () => {
   const languages: Language[] = [
     {
       label: 'English',
-      value: 'en'
+      value: 'en',
     },
     {
       label: 'Spanish',
-      value: 'es'
+      value: 'es',
     },
     {
       label: 'Hindi',
-      value: 'hi'
+      value: 'hi',
     },
     {
       label: 'Japanese',
-      value: 'ja'
+      value: 'ja',
     },
     {
       label: 'Korean',
-      value: 'ko'
+      value: 'ko',
     },
     {
       label: 'Portuguese',
-      value: 'pt'
+      value: 'pt',
     },
     {
       label: 'Chinese',
-      value: 'zh'
+      value: 'zh',
     },
     {
       label: 'Vietnamese',
-      value: 'vi'
+      value: 'vi',
     },
     {
       label: 'Turkish',
-      value: 'tr'
+      value: 'tr',
     },
   ];
 
@@ -54,15 +55,25 @@ export const LanguagePicker = () => {
     i18n.changeLanguage(language);
     localStorage.setItem('language', language);
     window.location.reload();
-  }
+  };
 
   const selectedLanguage = getUsedLanguage();
 
-  const isLanguage = languages.map(language => language.value === selectedLanguage).includes(true);
+  const isLanguage = languages
+    .map((language) => language.value === selectedLanguage)
+    .includes(true);
 
   return (
-    <Select className="language-picker" onChange={onChange} value={isLanguage ? selectedLanguage : 'en'}>
-      {languages.map(language => <MenuItem key={language.value} value={language.value}>{language.label}</MenuItem>)}
+    <Select
+      className="language-picker"
+      onChange={onChange}
+      value={isLanguage ? selectedLanguage : 'en'}
+    >
+      {languages.map((language) => (
+        <MenuItem key={language.value} value={language.value}>
+          {language.label}
+        </MenuItem>
+      ))}
     </Select>
   );
 };

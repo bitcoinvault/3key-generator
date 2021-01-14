@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { KeyGeneratorPage } from './components/pages/keyGenerator/KeyGeneratorPage';
 import './styles/typography.scss';
 

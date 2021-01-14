@@ -1,6 +1,7 @@
 import React from 'react';
-import { images } from '../../assets';
 import { withTranslation, WithTranslation } from 'react-i18next';
+
+import { images } from '../../assets';
 import './header.scss';
 
 class Header extends React.PureComponent<WithTranslation, any> {

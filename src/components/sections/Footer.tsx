@@ -1,5 +1,6 @@
 import React from 'react';
 import { withTranslation, WithTranslation } from 'react-i18next';
+
 import { LanguagePicker } from 'components/pages/keyGenerator/LanguagePicker';
 
 class Footer extends React.PureComponent<WithTranslation, any> {
@@ -19,6 +20,6 @@ export default withTranslation()(Footer);
 const styles = {
   container: {
     padding: '34px',
-    textAlign: 'center' as const
+    textAlign: 'center' as const,
   },
-}
+};
