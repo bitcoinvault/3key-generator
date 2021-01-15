@@ -1,5 +1,7 @@
 node_modules
 build
 public
-cypress
 nginx
+
+# Cypress' test artifacts
+/artifacts
