@@ -1,4 +1,10 @@
-const devices = [
+interface Device {
+  model: string;
+  width: number;
+  height: number;
+}
+
+const devices: Device[] = [
   {
     model: 'macbook-15',
     width: 1440,
