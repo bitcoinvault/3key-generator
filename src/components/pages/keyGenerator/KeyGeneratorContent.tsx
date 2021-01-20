@@ -14,6 +14,7 @@ import './keyGeneratorContent.scss';
 
 export interface GeneratedKey {
   privateKey: string;
+  privateKeyWIF: string;
   publicKey: string;
   words: string[];
 }
@@ -28,6 +29,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
     super(props);
     this.state = {
       privateKey: '',
+      privateKeyWIF: '',
       publicKey: '',
       words: [],
       publicKeyImgUrl: '',
@@ -43,6 +45,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
     const keys = generateNewKeys();
     this.setState({
       privateKey: keys.privateKey,
+      privateKeyWIF: keys.privateKeyWIF,
       publicKey: keys.publicKey,
       words: keys.words
     });
@@ -60,7 +63,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
   }
 
   render() {
-    const { privateKey, publicKey, words, privateKeyImgUrl, publicKeyImgUrl } = this.state;
+    const { privateKey, privateKeyWIF, publicKey, words, privateKeyImgUrl, publicKeyImgUrl } = this.state;
     return (
       <div className="container">
         <h2>{en.content.title}</h2>
@@ -83,6 +86,8 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
               <div className="chip-container">
                 {words?.map((word, index) => (<Chip key={index} label={`${index + 1}. ${word}`} />))}
               </div>
+              <Label label={en.content.privateKeyWIF} />
+              <Label label={privateKeyWIF} />
             </div>
             <div className="qrcode-container">
               <Label label={en.content.privateKeyQrCode} />
@@ -92,7 +97,7 @@ export class KeyGeneratorContent extends React.PureComponent<any, KeyGenerator> 
         </Grid>
         <div className="buttons-container">
           <Button onClick={this.onGenerateNewKey} label={en.content.generateNewKey} />
-          <div className="flat-button"><PDFDownloadLink document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={en.content.pdfFileName}><StyledText label={en.content.exportAsPdf} /></PDFDownloadLink></div>
+          <div className="flat-button"><PDFDownloadLink document={<KeyGeneratorPdf publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} privateKeyWIF={privateKeyWIF} />} fileName={en.content.pdfFileName}><StyledText label={en.content.exportAsPdf} /></PDFDownloadLink></div>
         </div>
       </div>
     );

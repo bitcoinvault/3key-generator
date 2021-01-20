@@ -56,7 +56,7 @@ const breakWord = (word: string) => {
 }
 
 export const KeyGeneratorPdf = (props: KeyGenerator) => {
-  const { publicKey, publicKeyImgUrl, privateKeyImgUrl, words } = props;
+  const { publicKey, publicKeyImgUrl, privateKeyImgUrl, words, privateKeyWIF } = props;
   return (
     <Document>
       <Page size="A4" style={styles.body} wrap>
@@ -68,6 +68,7 @@ export const KeyGeneratorPdf = (props: KeyGenerator) => {
         </View>
         <View>
           <Text style={styles.subtitle}>{en.pdf.privateKey}</Text>
+          <Text style={styles.text}>{breakWord(privateKeyWIF).map((word) => `${word}\n`)}</Text>
           <Image style={styles.image} src={privateKeyImgUrl} />
           <View style={styles.chipContainer}>
             {words.map((word: string, index: number) => (<Text key={index} style={styles.chip}>{index + 1}. {word}</Text>))}
