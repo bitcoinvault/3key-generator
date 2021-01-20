@@ -4,4 +4,4 @@ export const images = {
 
 export const pdf = {
   header: require('./pdf/header.png'),
-}
+};

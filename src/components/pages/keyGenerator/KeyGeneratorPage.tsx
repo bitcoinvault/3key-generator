@@ -1,8 +1,10 @@
 import React from 'react';
+
 import Header from '../../sections/Header';
 import { Content } from '../../sections/Content';
-import KeyGeneratorContent from './KeyGeneratorContent';
 import Footer from '../../sections/Footer';
+
+import KeyGeneratorContent from './KeyGeneratorContent';
 import './keyGeneratorPage.scss';
 
 export const KeyGeneratorPage = () => {
@@ -14,5 +16,5 @@ export const KeyGeneratorPage = () => {
       </Content>
       <Footer />
     </div>
-  )
-}
+  );
+};

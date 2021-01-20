@@ -1,7 +1,10 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Font } from '@react-pdf/renderer';
-import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
+
 import { pdf } from 'assets';
+
+import { KeyGenerator } from '../keyGenerator/KeyGeneratorContent';
+
 import { getLightFontSrc, getBoldFontSrc, getRegularFontSrc } from './keyGeneratorPdf/fontService';
 
 Font.register({ family: 'Font', src: getRegularFontSrc() });
@@ -12,7 +15,7 @@ const styles = StyleSheet.create({
   body: {
     paddingTop: 34,
     paddingHorizontal: 32,
-    fontFamily: 'Font'
+    fontFamily: 'Font',
   },
   title: {
     fontSize: 26,
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   titleContainer: {
-    marginBottom: 30
+    marginBottom: 30,
   },
   subtitle: {
     fontSize: 18,
@@ -43,7 +46,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     textAlign: 'center',
     marginBottom: 16,
-    color: 'rgb(148, 149, 149)'
+    color: 'rgb(148, 149, 149)',
   },
   chip: {
     fontSize: 10,
@@ -54,7 +57,7 @@ const styles = StyleSheet.create({
     marginRight: 8,
     marginLeft: 8,
     width: 'auto',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
   image: {
     textAlign: 'center',
@@ -62,13 +65,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 50,
   },
   imageContainer: {
-    marginTop: 24
+    marginTop: 24,
   },
   chipContainer: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    fontFamily: 'Font-Bold'
+    fontFamily: 'Font-Bold',
   },
   row: {
     flex: 1,
@@ -79,16 +82,16 @@ const styles = StyleSheet.create({
     flexGrow: 0,
     flexBasis: 300,
     flexShrink: 1,
-  }
+  },
 });
 
 const breakWord = (word: string) => {
   let words = null;
   if (word.length > 30) {
-    words = word.match(/.{1,30}/g)
+    words = word.match(/.{1,30}/g);
   }
   return words || [word];
-}
+};
 
 interface Props extends KeyGenerator {
   t: any;
@@ -119,7 +122,11 @@ export const KeyGeneratorPdf = (props: Props) => {
               <Text style={styles.subtitle}>{t('pdf:privateKey')}</Text>
               <Text style={styles.caption}>{t('content:phrase')}</Text>
               <View style={styles.chipContainer}>
-                {words.map((word: string, index: number) => (<Text key={index} style={styles.chip}>{index + 1}. {word}</Text>))}
+                {words.map((word: string, index: number) => (
+                  <Text key={index} style={styles.chip}>
+                    {index + 1}. {word}
+                  </Text>
+                ))}
               </View>
               <View style={styles.imageContainer}>
                 <Text style={styles.caption}>{t('content:privateKeyQrCode')}</Text>
@@ -129,5 +136,6 @@ export const KeyGeneratorPdf = (props: Props) => {
           </View>
         </View>
       </Page>
-    </Document>);
+    </Document>
+  );
 };

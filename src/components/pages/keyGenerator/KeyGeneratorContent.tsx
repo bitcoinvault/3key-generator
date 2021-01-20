@@ -1,16 +1,19 @@
 import React from 'react';
+import { Grid } from '@material-ui/core';
+import { PDFDownloadLink } from '@react-pdf/renderer';
+import QRCode, { QRCodeErrorCorrectionLevel } from 'qrcode';
+import { withTranslation, WithTranslation } from 'react-i18next';
+
 import { Chip } from '../../common/Chip';
 import { Button } from '../../common/Button';
 import { StyledText } from '../../common/StyledText';
 import { MultilineInput } from '../../common/MultilineInput';
-import { Grid } from '@material-ui/core';
 import { Label } from '../../common/Label';
 import { generateNewKeys } from '../../../service/KeyGenerator';
-import { PDFDownloadLink } from '@react-pdf/renderer';
-import QRCode, { QRCodeErrorCorrectionLevel } from 'qrcode';
+
 import { KeyGeneratorPdf } from './KeyGeneratorPdf';
+
 import './keyGeneratorContent.scss';
-import { withTranslation, WithTranslation } from 'react-i18next';
 
 export interface GeneratedKey {
   privateKey: string;
@@ -31,7 +34,7 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
       publicKey: '',
       words: [],
       publicKeyImgUrl: '',
-      privateKeyImgUrl: ''
+      privateKeyImgUrl: '',
     };
   }
 
@@ -44,23 +47,23 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
     this.setState({
       privateKey: keys.privateKey,
       publicKey: keys.publicKey,
-      words: keys.words
+      words: keys.words,
     });
     try {
       const options = {
         margin: 5,
-        errorCorrectionLevel: "H" as QRCodeErrorCorrectionLevel
+        errorCorrectionLevel: 'H' as QRCodeErrorCorrectionLevel,
       };
       const publicKeyImgUrl = await QRCode.toDataURL(keys.publicKey, options);
       const privateKeyImgUrl = await QRCode.toDataURL(keys.privateKey, options);
       this.setState({
         privateKeyImgUrl,
-        publicKeyImgUrl
-      })
+        publicKeyImgUrl,
+      });
     } catch (err) {
-      console.error(err)
+      console.error(err);
     }
-  }
+  };
 
   render() {
     const { privateKey, publicKey, words, privateKeyImgUrl, publicKeyImgUrl } = this.state;
@@ -85,7 +88,9 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
               <h3>{t('content:privateKey')}</h3>
               <Label label={t('content:phrase')} />
               <div className="chip-container">
-                {words?.map((word, index) => (<Chip key={index} label={`${index + 1}. ${word}`} />))}
+                {words?.map((word, index) => (
+                  <Chip key={index} label={`${index + 1}. ${word}`} />
+                ))}
               </div>
             </div>
             <div className="qrcode-container">
@@ -95,10 +100,24 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
           </Grid>
         </Grid>
         <div className="buttons-container">
-          <PDFDownloadLink document={<KeyGeneratorPdf t={t} publicKeyImgUrl={publicKeyImgUrl} privateKeyImgUrl={privateKeyImgUrl} publicKey={publicKey} words={words} privateKey={privateKey} />} fileName={t('content:pdfFileName')}>
+          <PDFDownloadLink
+            document={
+              <KeyGeneratorPdf
+                t={t}
+                publicKeyImgUrl={publicKeyImgUrl}
+                privateKeyImgUrl={privateKeyImgUrl}
+                publicKey={publicKey}
+                words={words}
+                privateKey={privateKey}
+              />
+            }
+            fileName={t('content:pdfFileName')}
+          >
             <Button label={t('content:exportAsPdf')} />
           </PDFDownloadLink>
-          <div onClick={this.onGenerateNewKey} className="flat-button"><StyledText label={t('content:generateNewKey')} /></div>
+          <div onClick={this.onGenerateNewKey} className="flat-button">
+            <StyledText label={t('content:generateNewKey')} />
+          </div>
         </div>
       </div>
     );

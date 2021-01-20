@@ -7,8 +7,6 @@ interface Props {
 
 export class Label extends React.PureComponent<Props> {
   render() {
-    return (
-      <h4 className="label-item">{this.props.label}</h4>
-    );
+    return <h4 className="label-item">{this.props.label}</h4>;
   }
 }
