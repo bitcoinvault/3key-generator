@@ -9,8 +9,10 @@ class Header extends React.PureComponent<WithTranslation, any> {
     const { t } = this.props;
     return (
       <div className="header">
-        <img alt={t('header:logoAlt')} src={images.logo} className="logo" />
-        <h1 className="label">{t('header:title')}</h1>
+        <img data-testId="bitcoint-vault-logo" alt={t('header:logoAlt')} src={images.logo} className="logo" />
+        <h1 data-testId="header" className="label">
+          {t('header:title')}
+        </h1>
       </div>
     );
   }

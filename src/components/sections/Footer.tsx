@@ -8,7 +8,7 @@ class Footer extends React.PureComponent<WithTranslation, any> {
     const { t } = this.props;
     return (
       <div style={styles.container}>
-        <h5>{t('footer:title')}</h5>
+        <h5 data-testId="footer-copyright">{t('footer:title')}</h5>
         <LanguagePicker />
       </div>
     );

@@ -1,15 +1,21 @@
 const keyGenerator = {
-  header: '.header > .label',
-  logo: '[alt="bitcoin vault logo"]',
-  title: 'h2',
-  languageButton: '[role="button"][aria-haspopup="listbox"]',
-  phrase: '.chip-container > :nth-child(1n+0)',
-  multiline: 'textarea',
-  qrPublicKey: '[alt="Public key"]',
-  qrPrivateKey: '.private-container > .qrcode-container > img',
-  getNewKeyButton: 'div.flat-button h4.styled-text',
-  exportPdfButton: '.button',
-  allRightReserved: 'h5',
+  header: {
+    logo: '[data-testId="bitcoint-vault-logo"]',
+    title: '[data-testId="header"]',
+  },
+  content: {
+    title: '[data-testId="content-title"]',
+    publicKey: '[data-testId="public-key"]',
+    publicKeyQrCode: '[data-testId="public-key-qr-code"]',
+    privateKeyPhrase: '[data-testId="private-key-phrase"]',
+    privateKeyQrCode: '[data-testId="private-key-qr-code"]',
+    exportPdfButton: '[data-testId="export-pdf-button"]',
+    generateNewKeyButton: '[data-testId="generate-new-key-button"]',
+  },
+  footer: {
+    copyright: '[data-testId="footer-copyright"]',
+    languageButton: '[data-testId="language-picker-select"]',
+  },
 };
 
 export default keyGenerator;
