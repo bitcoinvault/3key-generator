@@ -70,7 +70,7 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
     const { t } = this.props;
     return (
       <div className="container">
-        <h2>{t('content:title')}</h2>
+        <h2 data-testId="content-title">{t('content:title')}</h2>
         <Grid container justify="center" style={{ marginTop: 40, marginBottom: 40 }}>
           <Grid item xs={12} sm={10} md={6} lg={6} style={{ display: 'flex', flexDirection: 'column' }}>
             <div className="height-container" style={{ height: '100%' }}>
@@ -80,14 +80,14 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
             </div>
             <div className="qrcode-container">
               <Label label={t('content:publicKeyQrCode')} />
-              <img src={publicKeyImgUrl} alt={t('content:publicKey')} width={200} />
+              <img data-testId="public-key-qr-code" src={publicKeyImgUrl} alt={t('content:publicKey')} width={200} />
             </div>
           </Grid>
           <Grid item xs={12} sm={10} md={6} lg={6} className="private-container">
             <div className="height-container">
               <h3>{t('content:privateKey')}</h3>
               <Label label={t('content:phrase')} />
-              <div className="chip-container">
+              <div data-testId="private-key-phrase" className="chip-container">
                 {words?.map((word, index) => (
                   <Chip key={index} label={`${index + 1}. ${word}`} />
                 ))}
@@ -95,7 +95,7 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
             </div>
             <div className="qrcode-container">
               <Label label={t('content:privateKeyQrCode')} />
-              <img src={privateKeyImgUrl} alt={t('content:privateKey')} width={200} />
+              <img data-testId="private-key-qr-code" src={privateKeyImgUrl} alt={t('content:privateKey')} width={200} />
             </div>
           </Grid>
         </Grid>
@@ -113,9 +113,9 @@ class KeyGeneratorContent extends React.PureComponent<WithTranslation, KeyGenera
             }
             fileName={t('content:pdfFileName')}
           >
-            <Button label={t('content:exportAsPdf')} />
+            <Button testId="export-pdf-button" label={t('content:exportAsPdf')} />
           </PDFDownloadLink>
-          <div onClick={this.onGenerateNewKey} className="flat-button">
+          <div data-testId="generate-new-key-button" onClick={this.onGenerateNewKey} className="flat-button">
             <StyledText label={t('content:generateNewKey')} />
           </div>
         </div>
