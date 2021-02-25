@@ -1,32 +1,39 @@
 # set the base image
-# This is the application image from which
-# all other subsequent applications run
-# why alpine? Alpine Linux is a security-oriented, lightweight
-# Linux distribution. how small? how about 5Mb?
-# in comparison ubuntu 18.04 is about 1.8Gb
-FROM node:alpine
-#add python
-RUN apk --no-cache add  g++ gcc libgcc libstdc++ linux-headers make python
+# n/b: for production, node is only used for building 
+# the static Html and javascript files
+# as react creates static html and js files after build
+# these are what will be served by nginx
+# use alias build to be easier to refer this container elsewhere
+# e.g inside nginx container
+FROM node:alpine as build
 # set working directory
 # this is the working folder in the container
 # from which the app will be running from
 WORKDIR /app
-# copy package.json and yarn.lock
-# package.json to install the packages from
-# and yarn.lock for a package called chokidar
-# which is used for hot reloading
-COPY package.json /app/package.json
-COPY tsconfig.json /app/tsconfig.json
-COPY yarn.lock /app/yarn.lock
-# since we are using local files and not copying them to docker
-# add the container's node_modules folder to docker's $PATH
-# so that it can find and watch it's dependencies
+# copy everything to /app directory
+# as opposed to on dev, in prod everything is copied to docker
+COPY . /app
+# add the node_modules folder to $PATH
 ENV PATH /app/node_modules/.bin:$PATH
 # install and cache dependencies
-# n/b: these dependencies are installed inside docker
-# it runs the command "yarn" which is an equivalent of "yarn add"
 RUN apk add --no-cache git
 RUN yarn
-# start the container
-CMD ["yarn", "start"]
-
+#build the project for production
+RUN yarn build
+# set up production environment
+# the base image for this is an alpine based nginx image
+FROM nginx:alpine
+# copy the build folder from react to the root of nginx (www)
+COPY --from=build /app/build /usr/share/nginx/html
+# --------- only for those using react router ----------
+# if you are using react router 
+# you need to overwrite the default nginx configurations
+# remove default nginx configuration file
+RUN rm /etc/nginx/conf.d/default.conf
+# replace with custom one
+COPY nginx/nginx.conf /etc/nginx/conf.d
+# --------- /only for those using react router ----------
+# expose port 80 to the outer world
+EXPOSE 80
+# start nginx 
+CMD ["nginx", "-g", "daemon off;"]
