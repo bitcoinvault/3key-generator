@@ -5,6 +5,7 @@ import { pbkdf2Sync } from 'pbkdf2';
 import * as ecurve from 'ecurve';
 import { GeneratedKey } from '../components/pages/keyGenerator/KeyGeneratorContent';
 const bigi = require('bigi');
+const wif = require('wif');
 
 const getBitsFromBytes = (bytes: Buffer) => {
   let bits = '';
@@ -40,9 +41,17 @@ export const generateNewKeys = (): GeneratedKey => {
   const privateKey = pbkdf2Sync(random128bits, random132bits.slice(0, 4), 1, 32, 'sha256');
   const curve = ecurve.getCurveByName('secp256k1');
   const publicKey = curve.G.multiply(bigi.fromBuffer(privateKey)).getEncoded(false).toString('hex');
+  let networkWIF;
+  if (process.env.REACT_APP_NETWORK === 'testnet' || process.env.REACT_APP_NETWORK === 'regtest') {
+    networkWIF = 0xef;
+  } else {
+    networkWIF = 0x80;
+  }
+
   return {
     publicKey,
     privateKey: privateKey.toString('hex'),
+    privateKeyWIF: wif.encode(networkWIF, privateKey, false),
     words: generatedWords || []
   };
 }

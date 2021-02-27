@@ -9,6 +9,7 @@ export const en = {
     multiline: 'Multiline',
     publicKeyQrCode: 'Public key QR code',
     privateKey: 'Private key',
+    privateKeyWIF: 'Private key in WIF',
     phrase: 'Phrase',
     privateKeyQrCode: 'Private key QR code',
     generateNewKey: 'Generate new key',

@@ -26,3 +26,6 @@ services:
     # set the environment to development
     environment:
       - NODE_ENV=development
+      - REACT_APP_NETWORK=mainnet
+
+      
