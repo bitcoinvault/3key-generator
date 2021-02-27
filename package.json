@@ -1,6 +1,6 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "key-generator",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.14",
@@ -88,6 +88,18 @@
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "start-server-and-test": "^1.11.7",
-    "typescript-styled-plugin": "^0.15.0"
+    "typescript-styled-plugin": "^0.15.0",
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.2.0",
+    "@semantic-release/npm": "^7.0.10",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "commitizen": "^4.2.3",
+    "conventional-changelog-conventionalcommits": "^4.5.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "semantic-release": "^17.3.9"
   }
 }
