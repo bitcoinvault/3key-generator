@@ -11,9 +11,7 @@ export class Content extends React.PureComponent<Props> {
     return (
       <Grid container justify="center" style={{ marginTop: 40 }}>
         <Grid item xs={12} sm={10} md={8} lg={6}>
-          <div className="content">
-            {this.props.children}
-          </div>
+          <div className="content">{this.props.children}</div>
         </Grid>
       </Grid>
     );

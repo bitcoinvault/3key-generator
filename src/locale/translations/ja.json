@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "Key Generator",
+    "logoAlt": "ビットコインボルトロゴ"
+  },
+  "content": {
+    "title": "ECDSAキーを生成する",
+    "publicKey": "公開キー",
+    "multiline": "マルチライン",
+    "publicKeyQrCode": "公開キーQRコード",
+    "privateKey": "個人キー",
+    "phrase": "パスワード",
+    "privateKeyQrCode": "個人キーQRコード",
+    "generateNewKey": "新しいキーを生成する",
+    "exportAsPdf": "PDFエクスポート",
+    "pdfFileName": "ecdsa_キー_生成.pdf"
+  },
+  "footer": {
+    "title": "© Bitcoin Vault All rights reserved."
+  },
+  "pdf": {
+    "title": "生成されたECDSAキー",
+    "publicKey": "公開キー",
+    "privateKey": "個人キー",
+    "nextSteps": "個人キー生成が完了しました。安全な場所に保管して、他人と共有しないでください。ウォレット設定の最後の段階で個人キーが必ず必要となります。 (デスクトップまたはモバイルアプリケーション)"
+  }
+}

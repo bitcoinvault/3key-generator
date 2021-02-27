@@ -1,0 +1,27 @@
+{
+  "header": {
+    "title": "Key Generator",
+    "logoAlt": "logo bitcoin vault"
+  },
+  "content": {
+    "title": "Hasilkan kunci ECDSA",
+    "publicKey": "Kunci publik",
+    "multiline": "Multiline",
+    "publicKeyQrCode": "Kode QR kunci publik",
+    "privateKey": "Kunci pribadi",
+    "phrase": "Frase",
+    "privateKeyQrCode": "Kode QR kunci pribadi",
+    "generateNewKey": "Hasilkan kunci baru",
+    "exportAsPdf": "Export sebagai PDF",
+    "pdfFileName": "hasil_kunci_ecdsa.pdf"
+  },
+  "footer": {
+    "title": "© Bitcoin Vault Semua hak dilindungi."
+  },
+  "pdf": {
+    "title": "Hasil kunci ECDSA",
+    "publicKey": "Kunci publik",
+    "privateKey": "Kunci pribadi",
+    "nextSteps": "Kunci sukses dihasilkan. Mohon simpani tempat yang aman dan jangan bagikan kunci ini dengan orang lain. Anda memerlukan kunci ini dalam tahap akhir pengaturan dompet Anda (di aplikasi desktop ataupun mobile)"
+  }
+}

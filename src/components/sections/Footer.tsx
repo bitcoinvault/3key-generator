@@ -1,19 +1,25 @@
 import React from 'react';
-import { en } from '../../locale/en';
+import { withTranslation, WithTranslation } from 'react-i18next';
 
-export class Footer extends React.PureComponent {
+import { LanguagePicker } from 'components/pages/keyGenerator/LanguagePicker';
+
+class Footer extends React.PureComponent<WithTranslation, any> {
   render() {
+    const { t } = this.props;
     return (
       <div style={styles.container}>
-        <h5>{en.footer.title}</h5>
+        <h5 data-testId="footer-copyright">{t('footer:title')}</h5>
+        <LanguagePicker />
       </div>
     );
   }
 }
 
+export default withTranslation()(Footer);
+
 const styles = {
   container: {
     padding: '34px',
-    textAlign: 'center' as const
+    textAlign: 'center' as const,
   },
-}
+};

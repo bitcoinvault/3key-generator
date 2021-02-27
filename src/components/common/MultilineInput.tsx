@@ -7,8 +7,6 @@ interface Props {
 
 export class MultilineInput extends React.PureComponent<Props> {
   render() {
-    return (
-      <textarea rows={8} readOnly value={this.props.value} />
-    );
+    return <textarea data-testId="public-key" rows={8} readOnly value={this.props.value} />;
   }
 }

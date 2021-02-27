@@ -1,0 +1,7 @@
+node_modules
+build
+public
+nginx
+
+# Cypress' test artifacts
+/artifacts
