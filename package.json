@@ -13,7 +13,7 @@
     "ecurve": "^1.0.6",
     "i18next": "^19.5.4",
     "i18next-browser-languagedetector": "^5.0.0",
-    "node-sass": "^4.14.1",
+    "node-sass": "^7.0.0",
     "pbkdf2": "^3.0.17",
     "qrcode": "^1.4.4",
     "randombytes": "^2.1.0",
